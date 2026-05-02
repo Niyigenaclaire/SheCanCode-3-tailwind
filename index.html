@@ -10,14 +10,22 @@
     <div class="page-wrapper">
       <header class="topbar">
         <span class="brand">Tailwind Template</span>
-        <nav class="nav-links">
-          <a href="#contact" class="button-primary">Get Started</a>
-          <a href="#about" class="button-secondary">How it Works</a>
-        </nav>
+        <div class="topbar-actions">
+          <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="action-buttons">
+            <button type="button" class="button-secondary" id="themeToggle">Light Mode</button>
+            <a href="#signin" class="button-secondary">Sign In</a>
+            <a href="#signup" class="button-primary">Sign Up</a>
+          </div>
+        </div>
       </header>
 
       <section id="home" class="hero">
-        <div class="hero-copy">
+        <div class="hero-copy animate-fade-in">
           <p class="lead">Digital solutions for your startup</p>
           <h1>Handcrafted Tailwind CSS for your next business or SaaS website.</h1>
           <p class="description">A clean preview layout built with simple utility classes. It is responsive, easy to read, and useful for beginners learning Tailwind.</p>
@@ -27,7 +35,7 @@
           </div>
         </div>
 
-        <div class="hero-media motion-pulse">
+        <div class="hero-media">
           <div class="hero-placeholder">
             <p>Hero Images Section</p>
             <p>(Images moved to separate gallery below)</p>
@@ -42,6 +50,18 @@
           <img src="images/7.jpg" alt="Feature image 7" class="gallery-img animate-slide-up" />
           <img src="images/8.jpg" alt="Feature image 8" class="gallery-img animate-fade-in" />
           <img src="images/9.jpg" alt="Feature image 9" class="gallery-img animate-slide-up" />
+        </div>
+      </section>
+
+      <section id="signin" class="signin">
+        <div class="signin-card">
+          <h2>Sign In</h2>
+          <p>Access your account and continue building your Tailwind project.</p>
+          <form class="signup-form">
+            <input type="email" placeholder="Email address" class="signup-input" required>
+            <input type="password" placeholder="Password" class="signup-input" required>
+            <button type="submit" class="button-primary">Sign In</button>
+          </form>
         </div>
       </section>
 
@@ -85,5 +105,22 @@
         </div>
       </section>
     </div>
+    <script>
+      const toggle = document.getElementById('themeToggle');
+      const body = document.body;
+      const storedTheme = localStorage.getItem('theme');
+      const setMode = (mode) => {
+        body.classList.toggle('light', mode === 'light');
+        toggle.textContent = mode === 'light' ? 'Dark Mode' : 'Light Mode';
+        localStorage.setItem('theme', mode);
+      };
+      if (storedTheme === 'light') {
+        setMode('light');
+      }
+      toggle.addEventListener('click', () => {
+        const next = body.classList.contains('light') ? 'dark' : 'light';
+        setMode(next);
+      });
+    </script>
   </body>
 </html>
