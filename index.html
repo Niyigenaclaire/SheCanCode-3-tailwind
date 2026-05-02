@@ -12,7 +12,7 @@
         <span class="brand">Tailwind Template</span>
         <nav class="nav-links">
           <a href="#contact" class="button-primary">Get Started</a>
-          <a href="#about" class="button-secondary">How it Work</a>
+          <a href="#about" class="button-secondary">How it Works</a>
         </nav>
       </header>
 
@@ -23,17 +23,25 @@
           <p class="description">A clean preview layout built with simple utility classes. It is responsive, easy to read, and useful for beginners learning Tailwind.</p>
           <div class="hero-actions">
             <a href="#contact" class="button-primary">Get Started</a>
-            <a href="#about" class="button-secondary">How it works</a>
+            <a href="#about" class="button-secondary">How it Works</a>
           </div>
         </div>
 
         <div class="hero-media motion-pulse">
-          <img src="images/1.jpg" alt="Startup hero image" />
-          <div class="hero-grid">
-            <img src="images/7.jpg" alt="Feature image 7" />
-            <img src="images/8.jpg" alt="Feature image 8" />
-            <img src="images/9.jpg" alt="Feature image 9" />
+          <div class="hero-placeholder">
+            <p>Hero Images Section</p>
+            <p>(Images moved to separate gallery below)</p>
           </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <h2 class="gallery-title">Project Gallery</h2>
+        <div class="gallery-grid">
+          <img src="images/1.jpg" alt="Startup hero image" class="gallery-img animate-fade-in" />
+          <img src="images/7.jpg" alt="Feature image 7" class="gallery-img animate-slide-up" />
+          <img src="images/8.jpg" alt="Feature image 8" class="gallery-img animate-fade-in" />
+          <img src="images/9.jpg" alt="Feature image 9" class="gallery-img animate-slide-up" />
         </div>
       </section>
 
@@ -59,10 +67,21 @@
       <section id="contact" class="contact-card">
         <div class="contact-row">
           <div class="contact-text">
-            <h2>Contact the team</h2>
-            <p>Have questions or want a quote? Use the button to get started and we will help set up your next Tailwind landing page.</p>
+            <h2>Looking for a company solution?</h2>
+            <p>Contact our team to get a quote. We help set up your next Tailwind landing page.</p>
           </div>
-          <a href="#" class="button-contact">Send a message</a>
+          <a href="#" class="button-contact">Get a Quote</a>
+        </div>
+      </section>
+
+      <section id="signup" class="signup">
+        <div class="signup-card">
+          <h2>Sign Up for Updates</h2>
+          <p>Stay updated with the latest Tailwind templates and tips.</p>
+          <form class="signup-form">
+            <input type="email" placeholder="Enter your email" class="signup-input" required>
+            <button type="submit" class="button-primary">Sign Up</button>
+          </form>
         </div>
       </section>
     </div>
