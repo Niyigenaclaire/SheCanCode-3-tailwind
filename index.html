@@ -33,7 +33,7 @@
 
       <section id="home" class="hero">
         <div class="hero-copy animate-fade-in">
-          <p class="lead">Digital solutions for your startup</p>
+          <p class="lead">Digital solutions for your <span class="rotating-word">Agency</span></p>
           <h1>Handcrafted Tailwind CSS for your next business or SaaS website.</h1>
           <p class="description">A clean preview layout built with simple utility classes. It is responsive, easy to read, and useful for beginners learning Tailwind.</p>
           <div class="hero-actions">
@@ -43,17 +43,7 @@
         </div>
 
         <div class="hero-media">
-          <div class="hero-visual">
-            <div class="hero-card hero-card-top animate-float">
-              <span class="hero-badge">Featured</span>
-              <h3>Startup landing hero</h3>
-              <p>Build a modern, eye-catching homepage with clean visuals and motion.</p>
-            </div>
-            <div class="hero-card hero-card-bottom">
-              <h3>Design that converts</h3>
-              <p>Bright visuals and simple structure for fast beginner-friendly layouts.</p>
-            </div>
-          </div>
+          <img src="images/1.jpg" alt="Hero visual image" class="hero-image">
         </div>
       </section>
 
@@ -122,19 +112,32 @@
     <script>
       const toggle = document.getElementById('themeToggle');
       const body = document.body;
-      const storedTheme = localStorage.getItem('theme');
+      const rotatingWord = document.querySelector('.rotating-word');
+      const words = ['Agency', 'Startup', 'Business', 'SaaS'];
+      let wordIndex = 0;
+
       const setMode = (mode) => {
         body.classList.toggle('light', mode === 'light');
         toggle.textContent = mode === 'light' ? 'Dark Mode' : 'Light Mode';
         localStorage.setItem('theme', mode);
       };
+
+      const storedTheme = localStorage.getItem('theme');
       if (storedTheme === 'light') {
         setMode('light');
       }
+
       toggle.addEventListener('click', () => {
         const next = body.classList.contains('light') ? 'dark' : 'light';
         setMode(next);
       });
+
+      if (rotatingWord) {
+        setInterval(() => {
+          wordIndex = (wordIndex + 1) % words.length;
+          rotatingWord.textContent = words[wordIndex];
+        }, 2200);
+      }
     </script>
   </body>
 </html>
